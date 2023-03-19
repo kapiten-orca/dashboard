@@ -28,3 +28,10 @@ Route::get('/ptb', function () {
 Route::get('/akademik', function () {
     return view('akademik.index');
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+Route::get('/register', function () {
+    return view('auth.register');
+});

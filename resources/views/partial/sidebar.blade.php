@@ -2,12 +2,12 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
+            <div class="px-6">
+
+                <a class="sidebar-brand d-flex align-items-center justify-content-start " href="index">
+                    <img src={{asset('templates/img/logo-sttkd.png')}} width="200" height="84" alt="logo-sttkd">
+                </a>
+            </div>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
