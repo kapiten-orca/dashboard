@@ -65,7 +65,9 @@
     <script src={{asset('templates/js/sb-admin-2.min.js')}}></script>
 
     <!-- chart js-->
-   <script src={{asset('templates/vendor/chart.js/chart.min.js')}}></script>
+   <!-- <script src={{asset('templates/vendor/chart.js/chart.min.js')}}></script> -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 
 </html>

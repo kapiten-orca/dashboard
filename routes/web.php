@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PtbController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +23,13 @@ Route::get('/index', function () {
     return view('home.index');
 });
 
-Route::get('/ptb', function () {
-    return view('ptb.index');
-});
+// Route::get('/ptb', function () {
+//     return view('ptb.index');
+// });
+
+Route::get('/ptb', [PtbController::class, 'index']);
+
+
 
 Route::get('/akademik', function () {
     return view('akademik.index');
