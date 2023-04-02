@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\akademikController;
+use App\Http\Controllers\ptbController;
+use App\Http\Controllers\sessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,13 +28,15 @@ Route::get('/ptb', function () {
     return view('ptb.index');
 });
 
-Route::get('/akademik', function () {
-    return view('akademik.index');
-});
+Route::get('/sesi', [sessionController::class, 'index']);
+Route::post('/sesi/login', [sessionController::class, 'login']);
+Route::get('/sesi/logout', [sessionController::class, 'logout']);
+Route::get('/sesi/register', [sessionController::class, 'register']);
+Route::post('/sesi/create', [sessionController::class, 'create']);
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
-Route::get('/register', function () {
-    return view('auth.register');
-});
+Route::get('/akademik', [akademikController::class, 'index']);
+Route::get('/akademik/prodi', [akademikController::class, 'prodi']);
+Route::get('/ptb', [ptbController::class, 'index']);
+Route::get('/ptb/hreg', [ptbController::class, 'hreg']);
+Route::get('/ptb/taruna', [ptbController::class, 'dataTaruna']);
+

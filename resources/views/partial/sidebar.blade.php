@@ -31,11 +31,12 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('ptb') }}">
-                    <i class="fas fa-fw fa-address-card"></i>
-                    <span>PTB</span></a>
+                <a class="nav-link" href="{{url('/ptb')}}" 
+                    aria-expanded="true" >
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>PTB</span>
+                </a>
             </li>
-            
             <!-- Divider -->
             <hr class="sidebar-divider">
 

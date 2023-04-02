@@ -35,7 +35,7 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
-            <div id="content">
+            <div id="   ">
                 @include('partial.navbar')
                 @include('partial.header')
                 @yield('konten')
@@ -65,7 +65,9 @@
     <script src={{asset('templates/js/sb-admin-2.min.js')}}></script>
 
     <!-- chart js-->
-   <script src={{asset('templates/vendor/chart.js/chart.min.js')}}></script>
+    <!-- <script src={{asset('templates/vendor/chart.js/chart.min.js')}}></script> -->
+    <script src={{asset('templates/vendor/chart/chart.umd.js')}}></script>
+
 </body>
 
 </html>

@@ -13,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+
     <!-- Custom fonts for this template-->
     <link href={{asset("templates/vendor/fontawesome-free/css/all.min.css")}} rel="stylesheet" type="text/css">
     <link
@@ -27,32 +29,10 @@
 <body id="page-top">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-       @include('partial.sidebar')
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-            @include('partial.navbar')
-            @include('partial.header')
-            @yield('content')
-            </div>
-
-            <!-- Footer -->
-            @include('partial.footer')
-
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
     <!-- End of Page Wrapper -->
-
+    @include('partial.pesan')
+   @yield('content')
+   
     <!-- Scroll to Top Button-->
     @include('partial.scroll')
 
@@ -68,6 +48,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src={{asset('templates/js/sb-admin-2.min.js')}}></script>
+    <script src={{asset('templates/vendor/chart/chart.umd.js')}}></script>
 
 </body>
 
