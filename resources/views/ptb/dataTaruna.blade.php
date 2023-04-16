@@ -119,16 +119,15 @@
             </div>
             <div class="card-body">
                 <!-- Bar Chart -->
-                <canvas id="PendaftarBulanan" width="100%" height="60"></canvas>
+                <canvas id="catar_perbulan" width="100%" height="60" ></canvas>
                 <script>
                 document.addEventListener("DOMContentLoaded", () => {
-                    new Chart(document.querySelector('#PendaftarBulanan'), {
+                    new Chart(document.querySelector('#catar_perbulan'), {
                     type: 'line',
                     data: {
-                        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"],
                         datasets: [{
                         label: 'Taruna',
-                        data: [31, 20, 10, 45, 67, 24, 48, 89, 89, 91, 11, 50, 12, 43, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+                        data: <?php echo $data["catar_perbulan"] ?>,
                         backgroundColor: 'transparent',
                         pointRadius: 5,
                         pointHoverRadius: 10,
@@ -149,11 +148,11 @@
                         }]
                     },
                     options: {
-                        scales: {
-                        y: {
-                            beginAtZero: true
+                        parsing: {
+                            xAxisKey: 'bulan',
+                            yAxisKey: 'total'
                         }
-                        }
+                        
                     }
                     });
                 });

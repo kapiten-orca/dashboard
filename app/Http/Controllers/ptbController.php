@@ -12,6 +12,7 @@ class ptbController extends Controller
         
         $data["catar_pendaftar_perbulan"] = json_encode(GetPendaftarPerBulan());
         $data["catar_hereg_perbulan"] = json_encode(GetHeregPerBulan());
+        
         return view('ptb.index')->with('data',$data);
     }
 
@@ -25,7 +26,8 @@ class ptbController extends Controller
 
     public function dataTaruna()
     {
-        //echo json_encode(GetTarunaGender()); die;
+        //echo json_encode(GetPendaftarBulan()); die;
+        $data["catar_perbulan"] = json_encode(GetPendaftarBulan());
         $data["taruna_by_provinsi"] = json_encode(GetTarunaProvinsi());
         $data["taruna_by_gender"] = json_encode(GetTarunaGender());
         return view('ptb.dataTaruna')->with('data',$data);
@@ -657,4 +659,32 @@ function GetTarunaGender() {
         kkk.catarJK'
     );
     return $dataTarunaGender;
+}
+
+function GetPendaftarBulan(){
+    $dataPendaftarBulan = DB::select('SELECT		
+    COUNT(1) AS total,		
+    CONCAT(		
+        DAY(catarTimestamp),		
+        " ",		
+        MONTHNAME(catarTimestamp),		
+        " ",		
+        YEAR(catarTimestamp)		
+    ) AS bulan,
+    DAY(catarTimestamp) as tanggal,
+    MONTH(catarTimestamp) as kode_bulan,
+    Year(catarTimestamp) as tahun
+FROM		
+    ptb_calon_taruna		
+WHERE		
+    catarTahunDaftar = "2022" AND MONTH(catarTimestamp) = 2		
+GROUP BY
+    DAY(catarTimestamp),
+    MONTHNAME(catarTimestamp),
+    YEAR(catarTimestamp)
+ORDER BY		
+    YEAR(catarTimestamp) ASC,		
+    MONTH(catarTimestamp) ASC,		
+    DAY(catarTimestamp) ASC');
+    return $dataPendaftarBulan;
 }

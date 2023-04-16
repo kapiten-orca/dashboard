@@ -40,3 +40,5 @@ Route::get('/ptb', [ptbController::class, 'index']);
 Route::get('/ptb/hreg', [ptbController::class, 'hreg']);
 Route::get('/ptb/taruna', [ptbController::class, 'dataTaruna']);
 
+Route::post('/ptb/filter', [ptbController::class, 'dataFilter']);
+
